@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DeveloperToolsToolWindowSettingsV1" lastSelectedContentNodeId="regular-expression-matcher">
+    <developerToolsConfigurations>
+      <developerToolConfiguration developerToolId="regular-expression-matcher" id="f0026fd4-abf7-4e0f-9bc8-447121dcc0ae" name="Workbench">
+        <properties>
+          <property key="inputText" type="INPUT" value="kotlin.String|Something to Test" />
+          <property key="regexText" type="INPUT" value="kotlin.String|\s" />
+        </properties>
+      </developerToolConfiguration>
+    </developerToolsConfigurations>
+  </component>
+</project>
