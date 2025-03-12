@@ -27,13 +27,13 @@ const QUESTIONS: QuestionCollection = [
     {
         name: 'template',
         type: 'list',
-        message: 'What template would you like to use?',
+        message: 'Select a template:',
         choices: CHOICES
     },
     {
         name: 'name',
         type: 'input',
-        message: 'Project name:',
+        message: 'Enter project name:',
         validate: (answer: string) => {
             if (answer.length < 3) return 'Name should contain at least 3 characters'
             if (fs.existsSync(path.join(process.cwd(), kebabCase(answer)))) return 'Directory already exists'
@@ -43,7 +43,7 @@ const QUESTIONS: QuestionCollection = [
     {
         name: 'version',
         type: 'input',
-        message: 'Project version:',
+        message: 'Enter version:',
         validate: (answer: string) => {
             if (!/\d+\.\d+\.\d+/.test(answer)) return 'Semantic version must be valid'
             return true
@@ -53,7 +53,7 @@ const QUESTIONS: QuestionCollection = [
     {
         name: 'author',
         type: 'input',
-        message: 'Project author:',
+        message: 'Enter author:',
         default: null
     }
 ]
@@ -98,7 +98,7 @@ inquirer.prompt(QUESTIONS)
                 ))
             }
             console.clear()
-            console.log(chalk.green.bold(`Created app`))
+            console.log(chalk.green.bold(`✔ Project "${name}" created successfully!`))
             console.log(chalk.blue(`cd ${name}\nnpm install\nnpm run dev`))
         })
         .catch(err => {
