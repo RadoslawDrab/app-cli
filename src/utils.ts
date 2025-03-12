@@ -1,21 +1,27 @@
 import * as fs from 'fs'
 import * as path from 'path'
 
-export async function walk(p: string, callback: (path: string, fileInfo: fs.Stats) => void) {
-    const fileInfo = fs.statSync(p)
-    callback(p, fileInfo)
-    if (fileInfo.isDirectory()) {
-        const entries = fs.readdirSync(p, {recursive: true}) as string[]
-        for (const entry of entries) {
-            await walk(`${p}/${path.basename(entry)}`, callback)
+export function walk(p: string, callback: (path: string, fileInfo: fs.Stats, root: string) => void, options: {excludeDirs?: boolean, excludeFiles?: boolean, filter?: string | RegExp | string[] | RegExp[], recursive?: boolean} = {excludeDirs: false, excludeFiles: false, recursive: true}) {
+    const entries = fs.readdirSync(p, {recursive: options.recursive}) as string[]
+    for (const entry of entries) {
+        const fileInfo = fs.statSync(`${p}/${entry}`)
+
+        if (options.filter) {
+            const filter = Array.isArray(options.filter) ? options.filter : [options.filter]
+            if(!filter.some((f) => new RegExp(f).test(entry))) continue
         }
+        else {
+            if (options.excludeFiles && fileInfo.isFile()) continue
+            if (options.excludeDirs && fileInfo.isDirectory()) continue
+        }
+
+        callback(entry, fileInfo, p)
     }
 }
 
 export function fileLines(path: string) {
     ensureFileSync(path)
-
-    return fs.readFileSync(path).toString().split('\n')
+    return fs.readFileSync(path).toString().replace(/\\r$/, '').split(/[\n\r]/).filter(l => l)
 }
 
 export function kebabCase(text: string) {
@@ -27,4 +33,14 @@ export function ensureFileSync(path: string) {
 }
 export function ensureDirSync(path: string) {
     if (!fs.existsSync(path)) fs.mkdirSync(path)
+}
+
+export function getFiles(p: string, name: string | RegExp) {
+    const paths: string[] = []
+    walk(p, (recursivePath) => {
+        if(new RegExp(name).test(path.basename(recursivePath))) {
+            paths.push(recursivePath)
+        }
+    }, { excludeDirs: true })
+    return paths
 }

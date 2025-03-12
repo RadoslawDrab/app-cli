@@ -7,10 +7,11 @@ import chalk from 'chalk'
 
 // @ts-expect-error Valid types
 import type { QuestionCollection, ListChoiceOptions } from 'inquirer'
+import { render } from 'templates.js'
 
 import { ensureDirSync, fileLines, kebabCase } from './utils.ts'
 
-const TEMPLATES_PATH = path.join(process.cwd(), 'templates')
+const TEMPLATES_PATH = path.join(__dirname, 'templates')
 const SKIP_PATH = path.join(TEMPLATES_PATH, '.skip')
 
 const CHOICES = Array.from(fs.readdirSync(TEMPLATES_PATH) as string[])
@@ -38,6 +39,22 @@ const QUESTIONS: QuestionCollection = [
             if (fs.existsSync(path.join(process.cwd(), kebabCase(answer)))) return 'Directory already exists'
             return true
         }
+    },
+    {
+        name: 'version',
+        type: 'input',
+        message: 'Project version:',
+        validate: (answer: string) => {
+            if (!/\d+\.\d+\.\d+/.test(answer)) return 'Semantic version must be valid'
+            return true
+        },
+        default: '0.0.1'
+    },
+    {
+        name: 'author',
+        type: 'input',
+        message: 'Project author:',
+        default: null
     }
 ]
 
@@ -72,7 +89,13 @@ inquirer.prompt(QUESTIONS)
             for (const file of files) {
                 const resolved = getRelative(file)
                 // Copies file content to new files
-                fs.writeFileSync(path.join(resolved, path.basename(file)), fs.readFileSync(file, 'utf-8'))
+                fs.writeFileSync(path.join(resolved, path.basename(file)), render(fs.readFileSync(file, 'utf-8'),
+                    {
+                        projectName: name,
+                        author: answers.author,
+                        version: answers.version
+                    }
+                ))
             }
             console.clear()
             console.log(chalk.green.bold(`Created app`))
