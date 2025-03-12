@@ -1,20 +1,24 @@
 {
-  "name": "vue-cli",
+  "name": "app-cli",
   "type": "module",
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "build": "tsx esbuild.ts && npm link"
+    "build": "tsx src/build/index.ts && npm link"
   },
   "dependencies": {
+    "ejs": "^3.1.10",
     "esbuild": "^0.25.0",
     "inquirer": "^12.4.2"
   },
   "bin": {
-    "vue-cli": "dist\\index.cjs"
+    "app-cli": "dist\\index.cjs"
   },
   "devDependencies": {
+    "@types/ejs": "^3.1.5",
     "@types/inquirer": "^9.0.7",
+    "@types/shelljs": "^0.8.15",
     "chalk": "^5.4.1",
+    "shelljs": "^0.9.1",
     "tsx": "^4.19.3"
   }
 }

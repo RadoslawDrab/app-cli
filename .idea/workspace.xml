@@ -24,56 +24,75 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;RadoslawDrab&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/RadoslawDrab/app-cli.git&quot;,
+    &quot;accountId&quot;: &quot;a4d14817-dddf-4cbc-b444-37c9d843d7ea&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="2tUHEHONfGuz6zBbKihVsCr57Vj" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Deno.Deno: .executor": "Run",
-    "Deno.Deno: index.ts.executor": "Run",
-    "Deno.build.executor": "Run",
-    "Deno.dev.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Shell Script.dev.executor": "Run",
-    "deno.use.library": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/scripts/private/vue-cli/deno.json",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.build.executor": "Run",
-    "npm.dev.executor": "Run",
-    "settings.editor.selected.configurable": "com.intellij.deno.DenoConfigurable",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2024.3.1.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Deno.Deno: .executor&quot;: &quot;Run&quot;,
+    &quot;Deno.Deno: index.ts.executor&quot;: &quot;Run&quot;,
+    &quot;Deno.build.executor&quot;: &quot;Run&quot;,
+    &quot;Deno.dev.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Shell Script.dev.executor&quot;: &quot;Run&quot;,
+    &quot;deno.use.library&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/scripts/private/app-cli&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.build.executor&quot;: &quot;Run&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.fileTypes&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2024.3.1.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "vue.recent.templates": [
-      "Vue Composition API Component"
+  &quot;keyToStringList&quot;: {
+    &quot;GitStage.ChangesTree.GroupingKeys&quot;: [
+      &quot;directory&quot;,
+      &quot;module&quot;,
+      &quot;repository&quot;
+    ],
+    &quot;vue.recent.templates&quot;: [
+      &quot;Vue Composition API Component&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\scripts\private\app-cli" />
       <recent name="D:\scripts\private\vue-cli\templates" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\scripts\private\app-cli\src" />
+      <recent name="D:\scripts\private\app-cli" />
       <recent name="D:\scripts\private\vue-cli\src" />
       <recent name="D:\scripts\private\vue-cli" />
       <recent name="D:\scripts\private\vue-cli\templates\ts" />
-      <recent name="D:\scripts\private\tidy" />
     </key>
   </component>
   <component name="RunManager" selected="npm.build">
@@ -98,14 +117,14 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="npm.dev" />
       <item itemvalue="npm.build" />
+      <item itemvalue="npm.dev" />
     </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-WS-243.23654.157" />
+        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-WS-243.24978.60" />
       </set>
     </attachedChunks>
   </component>
@@ -120,10 +139,31 @@
       <workItem from="1740399623593" duration="879000" />
       <workItem from="1740400804178" duration="5833000" />
       <workItem from="1740466621327" duration="20299000" />
+      <workItem from="1740492387537" duration="874000" />
+      <workItem from="1740493447829" duration="120000" />
+      <workItem from="1741609869116" duration="48000" />
+      <workItem from="1741611418193" duration="822000" />
+      <workItem from="1741612259458" duration="122000" />
+      <workItem from="1741612393434" duration="3482000" />
+      <workItem from="1741690102323" duration="9732000" />
+      <workItem from="1741771620550" duration="5119000" />
     </task>
+    <task id="LOCAL-00001" summary="added app-cli">
+      <option name="closed" value="true" />
+      <created>1740492469252</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1740492469252</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added app-cli" />
+    <option name="LAST_COMMIT_MESSAGE" value="added app-cli" />
   </component>
 </project>

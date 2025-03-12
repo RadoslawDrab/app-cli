@@ -4,10 +4,11 @@
     <developerToolsConfigurations>
       <developerToolConfiguration developerToolId="regular-expression-matcher" id="f0026fd4-abf7-4e0f-9bc8-447121dcc0ae" name="Workbench">
         <properties>
-          <property key="inputText" type="INPUT" value="kotlin.String|Something to Test" />
-          <property key="regexText" type="INPUT" value="kotlin.String|\s" />
+          <property key="inputText" type="INPUT" value="kotlin.String|1.2.24" />
+          <property key="regexText" type="INPUT" value="kotlin.String|\d+\.\d+\.\d+" />
         </properties>
       </developerToolConfiguration>
     </developerToolsConfigurations>
+    <expandedGroupNodeIds />
   </component>
 </project>
