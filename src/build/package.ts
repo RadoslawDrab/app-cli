@@ -11,7 +11,6 @@ export default (build: Build) => {
         ...(packageContent.bin ?? {}),
         [scriptName]: path.relative(process.cwd(), build.OUT_FILE),
     }
-    packageContent.name = scriptName
 
     fs.writeFileSync(path.join(build.CURRENT_DIR, 'package.json'), JSON.stringify(packageContent, null, 2))
     log('info', 'package.json modified')
