@@ -1,4 +1,3 @@
-import chalk from 'chalk'
 import path from 'path'
 
 import cleanup from 'build/cleanup'
@@ -14,18 +13,21 @@ export interface Build {
     OUT_DIR: string
     OUT_FILE: string
     TEMPLATES_OUT_DIR: string
+    SKIP_FILE_NAME: string
 }
 
 const CURRENT_DIR = process.cwd()
 const OUT_DIR = path.join(CURRENT_DIR, 'dist')
 const OUT_FILE = path.join(OUT_DIR, 'index.cjs')
 const TEMPLATES_OUT_DIR = path.join(OUT_DIR, 'templates')
+const SKIP_FILE_NAME = 'skip'
 
 const build: Build = {
     CURRENT_DIR,
     OUT_DIR,
     OUT_FILE,
-    TEMPLATES_OUT_DIR
+    TEMPLATES_OUT_DIR,
+    SKIP_FILE_NAME
 }
 
 try {
