@@ -1,3 +1,4 @@
+import chalk from 'chalk'
 import * as fs from 'fs'
 import * as path from 'path'
 
@@ -43,4 +44,18 @@ export function getFiles(p: string, name: string | RegExp) {
         }
     }, { excludeDirs: true })
     return paths
+}
+export function log(type: 'success' | 'info' | 'error' | 'default', ...text: any[]) {
+    console.log(...text.map((t) => {
+        switch (type) {
+            case 'info':
+                return chalk.blue(t)
+            case 'success':
+                return chalk.green(t)
+            case 'error':
+                return chalk.red(t)
+            default:
+                return chalk.dim(t)
+        }
+    }))
 }

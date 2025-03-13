@@ -6,6 +6,9 @@ import esbuild from 'build/esbuild'
 import templates from 'build/templates'
 import pack from 'build/package'
 
+import { log as l } from '../utils'
+export const log = l
+
 export interface Build {
     CURRENT_DIR: string
     OUT_DIR: string
@@ -25,24 +28,13 @@ const build: Build = {
     TEMPLATES_OUT_DIR
 }
 
-cleanup(build)
-esbuild(build)
-templates(build)
-pack(build)
-
-log('success', 'App built successfully!')
-
-export function log(type: 'success' | 'info' | 'error' | 'default', ...text: string[]) {
-    console.log(...text.map((t) => {
-        switch (type) {
-            case 'info':
-                return chalk.blue(t)
-            case 'success':
-                return chalk.green(t)
-            case 'error':
-                return chalk.red(t)
-            default:
-                return chalk.dim(t)
-        }
-    }))
+try {
+    cleanup(build)
+    esbuild(build)
+    templates(build)
+    pack(build)
+    log('success', 'App built successfully!')
+} catch (e: any) {
+    log('error', 'Error:', e)
 }
+
